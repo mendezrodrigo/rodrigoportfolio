@@ -10,16 +10,16 @@ This portfolio brings together my work across international business studies, st
 
 ## Featured Areas
 
-- Battery Passport Data Management
-- Digital Product Passport Research
+- German-Indian FDI and Technology Spillover: Absorptive / Observative Capacity Research
+- Battery Passport Data Management: Digital Product Passport Research
+  
 - Hello World International Student Platform
-- Inkli / Inkly AI Creative Writing Research
-- START Nuremberg Podcasting & Event Coordination
-- Innovation Festival & Hackathons
-- Absorptive / Observative Capacity Research
-- German-Indian FDI and Technology Spillover
-- My Apocalypse Theater
-- Shapeshifter Philharmonic
+- START Nuremberg Podcasting, Marketing, Operations, Culture 
+- Volunteering in Innovation Festivals & Hackathons
+  
+- My Apocalypse Theater: Cinema Community
+- Shapeshifter Philharmonic: Music Composition
+- Rubikon Ventures: Distribution Network
 
 ## Creative Influences
 

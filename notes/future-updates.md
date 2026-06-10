@@ -11,7 +11,6 @@
 - Hackathon photos
 - Siemens / Battery Passport project summary
 - Digital Product Passport research summary
-- Inkli / Inkly AI writing research summary
 - My Apocalypse Theater concept page
 - Shapeshifter Philharmonic concept page
 - Absorptive / Observative Capacity research page

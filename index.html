@@ -1,1 +1,977 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rodrigo Mendez Carrillo | Portfolio</title>
+  <meta name="description" content="Minimalist portfolio landing page for Rodrigo Mendez Carrillo: culture theory, international business management, cinematic storytelling, music, AI research, digital product passports, and systems thinking." />
+  <style>
+    :root {
+      --white: #fbfaf7;
+      --paper: #ffffff;
+      --ink: #111111;
+      --muted: #6e6a66;
+      --line: rgba(17, 17, 17, 0.12);
+      --red: #b91121;
+      --red-soft: #e94757;
+      --purple: #5b3ff2;
+      --purple-soft: #8a6cff;
+      --charcoal: #1a1717;
+      --sand: #f3eee8;
+      --max: 1180px;
+      --radius: 28px;
+    }
 
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 88% 12%, rgba(91, 63, 242, 0.13), transparent 28%),
+        radial-gradient(circle at 8% 18%, rgba(185, 17, 33, 0.10), transparent 32%),
+        linear-gradient(135deg, var(--white) 0%, #fff 54%, #f7f2ef 100%);
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.28;
+      background-image:
+        linear-gradient(rgba(17,17,17,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(17,17,17,0.035) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: linear-gradient(to bottom, black, transparent 88%);
+      z-index: -2;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(18px);
+      background: rgba(251,250,247,0.78);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .mark {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      letter-spacing: -0.04em;
+      font-weight: 720;
+    }
+
+    .seal {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 1px solid var(--ink);
+      display: grid;
+      place-items: center;
+      color: var(--red);
+      font-size: 12px;
+      font-weight: 800;
+      box-shadow: inset 0 0 0 5px rgba(185,17,33,0.06);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      color: var(--muted);
+      font-size: 13px;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    .nav-links a:hover { color: var(--red); }
+
+    .hero {
+      min-height: calc(100vh - 72px);
+      display: grid;
+      align-items: center;
+      padding: 88px 0 72px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 28px;
+      color: var(--muted);
+      font-size: 13px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 34px;
+      height: 1px;
+      background: var(--red);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(54px, 8vw, 116px);
+      line-height: 0.91;
+      letter-spacing: -0.085em;
+      max-width: 950px;
+      font-weight: 830;
+    }
+
+    .hero h1 span {
+      display: block;
+      color: transparent;
+      -webkit-text-stroke: 1.2px var(--ink);
+      text-shadow: 0 18px 60px rgba(91,63,242,0.12);
+    }
+
+    .subhead {
+      max-width: 650px;
+      margin: 28px 0 0;
+      color: #3b3734;
+      font-size: clamp(18px, 2.2vw, 24px);
+      line-height: 1.45;
+      letter-spacing: -0.035em;
+    }
+
+    .subhead strong { color: var(--red); }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 36px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 18px;
+      border-radius: 999px;
+      border: 1px solid var(--ink);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: transform 180ms ease, background 180ms ease, color 180ms ease, border-color 180ms ease;
+    }
+
+    .button:hover { transform: translateY(-2px); }
+    .button.primary { background: var(--ink); color: var(--white); }
+    .button.primary:hover { background: var(--red); border-color: var(--red); }
+    .button.ghost:hover { border-color: var(--purple); color: var(--purple); }
+
+    .portrait-card {
+      position: relative;
+      min-height: 610px;
+      border-radius: calc(var(--radius) + 10px);
+      background:
+        linear-gradient(145deg, rgba(255,255,255,0.92), rgba(243,238,232,0.68)),
+        radial-gradient(circle at 78% 18%, rgba(91,63,242,0.16), transparent 32%);
+      border: 1px solid var(--line);
+      overflow: hidden;
+      box-shadow: 0 40px 120px rgba(17,17,17,0.08);
+    }
+
+    .enso {
+      position: absolute;
+      width: 310px;
+      height: 310px;
+      border: 34px solid rgba(185,17,33,0.90);
+      border-right-color: rgba(185,17,33,0.10);
+      border-bottom-color: rgba(185,17,33,0.32);
+      border-radius: 50%;
+      top: 58px;
+      right: 50px;
+      transform: rotate(-24deg);
+      filter: drop-shadow(0 28px 48px rgba(185,17,33,0.18));
+    }
+
+    .vertical-note {
+      position: absolute;
+      left: 44px;
+      top: 44px;
+      writing-mode: vertical-rl;
+      color: rgba(17,17,17,0.55);
+      font-family: Georgia, serif;
+      letter-spacing: 0.22em;
+      font-size: 16px;
+    }
+
+    .profile-block {
+      position: absolute;
+      left: 40px;
+      right: 40px;
+      bottom: 40px;
+      padding: 28px;
+      border-radius: 26px;
+      background: rgba(255,255,255,0.78);
+      border: 1px solid rgba(17,17,17,0.10);
+      backdrop-filter: blur(14px);
+    }
+
+    .profile-block h2 {
+      margin: 0 0 12px;
+      font-size: 34px;
+      line-height: 0.98;
+      letter-spacing: -0.06em;
+    }
+
+    .profile-block p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: 15px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .tag {
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(17,17,17,0.12);
+      background: rgba(255,255,255,0.72);
+      color: #393632;
+      font-size: 12px;
+      letter-spacing: 0.02em;
+    }
+
+    section { padding: 92px 0; }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: 0.62fr 1fr;
+      gap: 36px;
+      align-items: start;
+      margin-bottom: 42px;
+      border-top: 1px solid var(--line);
+      padding-top: 28px;
+    }
+
+    .section-kicker {
+      color: var(--red);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    h3 {
+      margin: 0;
+      font-size: clamp(34px, 4.8vw, 70px);
+      line-height: 0.98;
+      letter-spacing: -0.07em;
+    }
+
+    .section-copy {
+      margin: 18px 0 0;
+      max-width: 710px;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.65;
+      letter-spacing: -0.02em;
+    }
+
+    .identity-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .identity-card, .project-card, .timeline-item, .quote-panel, .contact-panel {
+      background: rgba(255,255,255,0.74);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 24px 90px rgba(17,17,17,0.045);
+    }
+
+    .identity-card {
+      min-height: 250px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .identity-card::after {
+      content: "";
+      position: absolute;
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      right: -36px;
+      top: -36px;
+      background: radial-gradient(circle, rgba(185,17,33,0.13), transparent 70%);
+    }
+
+    .identity-card:nth-child(2)::after { background: radial-gradient(circle, rgba(91,63,242,0.14), transparent 70%); }
+    .identity-card:nth-child(3)::after { background: radial-gradient(circle, rgba(17,17,17,0.08), transparent 70%); }
+    .identity-card:nth-child(4)::after { background: radial-gradient(circle, rgba(185,17,33,0.18), transparent 70%); }
+
+    .identity-card small {
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .identity-card h4 {
+      margin: 26px 0 12px;
+      font-size: 25px;
+      line-height: 1.03;
+      letter-spacing: -0.055em;
+    }
+
+    .identity-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: 14px;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .project-card {
+      padding: 24px;
+      min-height: 320px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(185,17,33,0.35);
+      box-shadow: 0 34px 110px rgba(185,17,33,0.10);
+    }
+
+    .project-number {
+      font-family: Georgia, serif;
+      color: rgba(17,17,17,0.28);
+      font-size: 24px;
+    }
+
+    .project-card h4 {
+      margin: 28px 0 12px;
+      font-size: 26px;
+      line-height: 1;
+      letter-spacing: -0.055em;
+    }
+
+    .project-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.58;
+      font-size: 14px;
+    }
+
+    .project-meta {
+      margin-top: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .mini {
+      padding: 7px 9px;
+      border: 1px solid rgba(17,17,17,0.10);
+      border-radius: 999px;
+      color: #4a4642;
+      font-size: 11px;
+      background: rgba(251,250,247,0.72);
+    }
+
+    .dark-strip {
+      background: var(--charcoal);
+      color: var(--white);
+      margin: 48px 0;
+      border-radius: 42px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .dark-strip::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 22% 18%, rgba(185,17,33,0.28), transparent 28%),
+        radial-gradient(circle at 83% 32%, rgba(91,63,242,0.24), transparent 30%);
+      pointer-events: none;
+    }
+
+    .dark-inner {
+      position: relative;
+      padding: 58px;
+      display: grid;
+      grid-template-columns: 0.75fr 1fr;
+      gap: 44px;
+      align-items: center;
+    }
+
+    .dark-inner h3 { color: var(--white); }
+    .dark-inner p { color: rgba(255,255,255,0.72); }
+
+    .principles {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .principle {
+      border: 1px solid rgba(255,255,255,0.13);
+      border-radius: 22px;
+      padding: 18px;
+      background: rgba(255,255,255,0.045);
+    }
+
+    .principle strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 14px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .principle span {
+      color: rgba(255,255,255,0.64);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 12px;
+    }
+
+    .timeline-item {
+      padding: 24px;
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .timeline-year {
+      color: var(--red);
+      font-weight: 850;
+      letter-spacing: -0.02em;
+    }
+
+    .timeline-item h4 {
+      margin: 0 0 8px;
+      font-size: 22px;
+      letter-spacing: -0.04em;
+    }
+
+    .timeline-item p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.58;
+    }
+
+    .skills-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .skill {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 11px 14px;
+      background: rgba(255,255,255,0.68);
+      color: #3c3835;
+      font-size: 13px;
+    }
+
+    .quote-panel {
+      padding: clamp(30px, 6vw, 72px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .quote-panel::before {
+      content: "—";
+      position: absolute;
+      right: 44px;
+      top: 20px;
+      font-size: 150px;
+      line-height: 1;
+      color: rgba(185,17,33,0.09);
+      font-family: Georgia, serif;
+    }
+
+    .quote-panel blockquote {
+      margin: 0;
+      max-width: 900px;
+      font-size: clamp(32px, 5vw, 72px);
+      line-height: 1.02;
+      letter-spacing: -0.075em;
+      font-weight: 820;
+    }
+
+    .quote-panel p {
+      max-width: 720px;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 18px;
+      margin: 28px 0 0;
+    }
+
+    .contact-panel {
+      padding: 44px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .contact-panel h3 { font-size: clamp(38px, 5vw, 74px); }
+
+    .contact-panel p {
+      color: var(--muted);
+      line-height: 1.6;
+      max-width: 680px;
+      margin: 16px 0 0;
+    }
+
+    footer {
+      padding: 32px 0 48px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      border-top: 1px solid var(--line);
+      padding-top: 22px;
+    }
+
+    .red { color: var(--red); }
+    .purple { color: var(--purple); }
+
+    @media (max-width: 980px) {
+      .hero-grid, .section-head, .dark-inner, .contact-panel { grid-template-columns: 1fr; }
+      .portrait-card { min-height: 520px; }
+      .identity-grid, .projects-grid { grid-template-columns: repeat(2, 1fr); }
+      .timeline-item { grid-template-columns: 1fr; gap: 10px; }
+      .nav-links { display: none; }
+      section { padding: 72px 0; }
+    }
+
+    @media (max-width: 640px) {
+      .container { width: min(var(--max), calc(100% - 24px)); }
+      .hero { padding: 56px 0; }
+      .portrait-card { min-height: 500px; }
+      .profile-block { left: 18px; right: 18px; bottom: 18px; padding: 22px; }
+      .enso { width: 250px; height: 250px; right: 22px; top: 72px; }
+      .identity-grid, .projects-grid, .principles { grid-template-columns: 1fr; }
+      .dark-inner { padding: 30px; }
+      .contact-panel { padding: 28px; }
+      .footer-inner { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="#top" class="mark" aria-label="Rodrigo Mendez Carrillo home">
+        <span class="seal">RM</span>
+        <span>Rodrigo Mendez Carrillo</span>
+      </a>
+      <div class="nav-links" aria-label="Primary navigation">
+        <a href="#identity">Identity</a>
+        <a href="#projects">Projects</a>
+        <a href="#cv">CV</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="top">
+    <header class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Cinema · Culture Theory · Systems Thinking · Music</div>
+          <h1>Mexican roots, Mediterranean dreams, Germanic systems <span>and cinematic futures.</span></h1>
+          <p class="subhead">
+            I am Rodrigo: a Mexican-American Master’s student in International Business Studies in Nuremberg, shaped by cinema, music, cultural theory, research, startup ecosystems, and the question of how identity becomes strategy.
+          </p>
+          <div class="cta-row">
+            <a class="button primary" href="#projects">View Projects</a>
+            <a class="button ghost" href="#cv">Read CV</a>
+          </div>
+        </div>
+
+        <aside class="portrait-card" aria-label="Visual identity panel">
+          <div class="vertical-note">Silence · Strategy · Story</div>
+          <div class="enso"></div>
+          <div class="profile-block">
+            <h2>Mexican roots. Mediterranean imagination. Germanic systems thinking.</h2>
+            <p>
+              Minimalist by aesthetic, maximalist by imagination: cinema, myth, music, Germanic systems, Mexican memory, Mediterranean romanticism, and nonlinear story worlds.
+            </p>
+            <div class="tags">
+              <span class="tag">Cinema</span>
+              <span class="tag">Music</span>
+              <span class="tag">Culture Theory</span>
+              <span class="tag">Systems Thinking</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </header>
+
+    <section id="identity">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">Identity System</div>
+          <div>
+            <h3>Not a linear profile. A layered cultural operating system.</h3>
+            <p class="section-copy">
+              My work sits between analytical structure and emotional texture: Mexican roots, Spanish deep heritage, American upbringing, Germanic systems thinking, Mediterranean imagination, and minimalist restraint.
+            </p>
+          </div>
+        </div>
+
+        <div class="identity-grid">
+          <article class="identity-card">
+            <small>Heritage</small>
+            <div>
+              <h4>Mexican roots & American formation</h4>
+              <p>Recent Mexican blood and heritage, Spanish depth, American upbringing, first-generation ambition, and a grounded understanding of mobility, resilience, and reinvention.</p>
+            </div>
+          </article>
+          <article class="identity-card">
+            <small>Aesthetic</small>
+            <div>
+              <h4>Minimalist cinematic restraint</h4>
+              <p>White space, silence, asymmetric balance, red signatures, black structure, and small purple signals of future-facing imagination.</p>
+            </div>
+          </article>
+          <article class="identity-card">
+            <small>Study</small>
+            <div>
+              <h4>Germanic theory & systems</h4>
+              <p>Learning through German business culture, organizational theory, institutional logic, language, technology spillovers, and rigorous academic framing.</p>
+            </div>
+          </article>
+          <article class="identity-card">
+            <small>Inner World</small>
+            <div>
+              <h4>Mediterranean emotional landscape</h4>
+              <p>Romanticism, sea-light, language learning, classical rhythm, theology, myth, and the belief that strategy should still feel human.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">Selected Work</div>
+          <div>
+            <h3>Selected work across research, culture, AI, music, cinema, and systems.</h3>
+            <p class="section-copy">
+              This portfolio is less a corporate project list and more a map of applied curiosity: internship-specific work, international business management, culture theory, group research, AI learning systems, podcasting, hackathons, nonprofit work, and cinematic storytelling.
+            </p>
+          </div>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project-card">
+            <div>
+              <div class="project-number">01</div>
+              <h4>Battery Passport Data Management</h4>
+              <p>Independent consulting work with Siemens through the Zollhof Tech Incubator Talent Program, focused on battery passport data management, sustainability, and value-chain transparency.</p>
+            </div>
+            <div class="project-meta"><span class="mini">Data Governance</span><span class="mini">Battery Passport</span><span class="mini">Sustainability</span></div>
+          </article>
+
+          <article class="project-card">
+            <div>
+              <div class="project-number">02</div>
+              <h4>Digital Product Passport Research</h4>
+              <p>Qualitative research and outreach around digital product passports, sustainability, regulatory pressure, and supply-value-chain pain points across European and global industry contexts.</p>
+            </div>
+            <div class="project-meta"><span class="mini">DPP</span><span class="mini">Interviews</span><span class="mini">Supply Chains</span></div>
+          </article>
+
+          <article class="project-card">
+            <div>
+              <div class="project-number">03</div>
+              <h4>Hello World — International Student Platform</h4>
+              <p>Product Manager and Co-Founder experience from McMillon Innovation Studio Product Labs, taking an international student connection platform from idea formulation to MVP.</p>
+            </div>
+            <div class="project-meta"><span class="mini">Product Labs</span><span class="mini">MVP</span><span class="mini">EdTech</span></div>
+          </article>
+
+          <article class="project-card">
+            <div>
+              <div class="project-number">04</div>
+              <h4>Inkli / Inkly — AI Creative Writing Research</h4>
+              <p>Research into AI tutors, metaphor feedback, learning modules, educator interviews, and systematic creative writing instruction.</p>
+            </div>
+            <div class="project-meta"><span class="mini">AI Education</span><span class="mini">Metaphor</span><span class="mini">Learning Design</span></div>
+          </article>
+
+          <article class="project-card">
+            <div>
+              <div class="project-number">05</div>
+              <h4>Nonprofit Analytics & Community Learning</h4>
+              <p>Nonprofit work involving attendance dashboards, program tracking, museum expansion benchmarking, forecasting, interviews with internal departments, and outreach programming for underserved communities.</p>
+            </div>
+            <div class="project-meta"><span class="mini">Tableau</span><span class="mini">Excel</span><span class="mini">Community Impact</span></div>
+          </article>
+
+          <article class="project-card">
+            <div>
+              <div class="project-number">06</div>
+              <h4>START Nuremberg, Innovation Festival & Podcasting</h4>
+              <p>Podcasting, event coordination, hackathons, Innovation Festival participation, START Summit in St. Gallen, Digital Tech Academy work, and startup ecosystem building in Nuremberg.</p>
+            </div>
+            <div class="project-meta"><span class="mini">Ecosystem</span><span class="mini">Events</span><span class="mini">Community</span></div>
+          </article>
+
+          <article class="project-card">
+            <div>
+              <div class="project-number">07</div>
+              <h4>Absorptive & Observative Capacity Research</h4>
+              <p>Research connecting Cohen & Levinthal’s absorptive capacity framework with observative capacity, foreign direct investment, German-Indian technology spillovers, and local learning mechanisms.</p>
+            </div>
+            <div class="project-meta"><span class="mini">Academic Research</span><span class="mini">FDI</span><span class="mini">Theory</span></div>
+          </article>
+
+          <article class="project-card">
+            <div>
+              <div class="project-number">08</div>
+              <h4>International Supply Chain Management</h4>
+              <p>International business management and group work across green supply chains, disposal logistics, logistics controlling, network design, IT systems, and sustainability.</p>
+            </div>
+            <div class="project-meta"><span class="mini">Green Supply Chains</span><span class="mini">Logistics</span><span class="mini">Sustainability</span></div>
+          </article>
+
+          <article class="project-card">
+            <div>
+              <div class="project-number">09</div>
+              <h4>My Apocalypse Theater</h4>
+              <p>A nonlinear cinematic storytelling lab blending mythology, archetypes, Mediterranean emotional landscapes, AI futures, apocalypse aesthetics, and interactive narrative experiments.</p>
+            </div>
+            <div class="project-meta"><span class="mini">Story Lab</span><span class="mini">Myth</span><span class="mini">Nonlinear Cinema</span></div>
+          </article>
+
+          <article class="project-card">
+            <div>
+              <div class="project-number">10</div>
+              <h4>Shapeshifter Philharmonic</h4>
+              <p>A new music venture inspired by Joy Division, Pink Floyd, Richard Wagner, piano, synthesizer, percussion, guitar, rock, metal, classical structure, bossa nova rhythm, and cinematic emotional architecture.</p>
+            </div>
+            <div class="project-meta"><span class="mini">Music Venture</span><span class="mini">Rock / Classical</span><span class="mini">Cinematic Sound</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container dark-strip">
+        <div class="dark-inner">
+          <div>
+            <div class="section-kicker">Working Philosophy</div>
+            <h3>Cinema, music, myth, discipline, and human stakes.</h3>
+            <p class="section-copy">
+              I like work that forces me to translate: between cultures, between research and action, between business and art, between data and story, between personal mythology and public value.
+            </p>
+          </div>
+          <div class="principles">
+            <div class="principle"><strong>Marcus Aurelius</strong><span>Discipline, restraint, and the ability to stay clear when the room gets loud.</span></div>
+            <div class="principle"><strong>Miyamoto Musashi</strong><span>Strategy as movement, timing, observation, and the calm violence of simplicity.</span></div>
+            <div class="principle"><strong>Robert Greene</strong><span>Psychology, power, narrative positioning, and the social architecture beneath decisions.</span></div>
+            <div class="principle"><strong>Campbell, Dante & Dore</strong><span>Hero’s journey, Divine Comedy, theology, myth, shadow, and visual imagination.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="cv">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">CV Snapshot</div>
+          <div>
+            <h3>A profile built through international movement, research, group work, and creative experimentation.</h3>
+            <p class="section-copy">
+              The through-line is value creation through culture: international business management, group research, data analytics, stakeholder work, podcasting, nonprofit work, hackathons, music, and cinematic systems design.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item">
+            <div class="timeline-year">Current</div>
+            <div>
+              <h4>Master’s Student — International Business Studies, FAU Erlangen-Nuremberg</h4>
+              <p>Studying in Nuremberg with interests in international business management, culture theory, Germanic systems thinking, cross-cultural management, AI/data governance, and European innovation ecosystems.</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-year">2025–2026</div>
+            <div>
+              <h4>Independent Consultant — Battery Passport Data Management with Siemens</h4>
+              <p>External partner through the Zollhof Tech Incubator Talent Program, working on data management challenges linked to battery passports and sustainable value chains.</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-year">2024–2025</div>
+            <div>
+              <h4>START Nuremberg & Digital Tech Academy</h4>
+              <p>Hackathons, Innovation Festival participation, START Summit St. Gallen, Bundestag visit with MIBS students, Talent Program participation, event coordination, and podcast co-hosting in the Nuremberg startup ecosystem.</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-year">2024</div>
+            <div>
+              <h4>AI Creative Writing Research — Inkli</h4>
+              <p>Explored AI tutors, metaphor feedback, learning modules, educator interviews, and theories for systematic creative writing instruction.</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-year">Product Labs</div>
+            <div>
+              <h4>Product Manager / Co-Founder — Hello World</h4>
+              <p>Led strategy, research, product roadmap, website design features, Connect & Message features, MVP development, and pitch communication for an international student platform.</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-year">Analytics</div>
+            <div>
+              <h4>Education Data Analyst & Project Lead</h4>
+              <p>Built attendance and program-tracking dashboards, conducted benchmarking research, interviewed department leaders, and supported outreach programming for lower-income and BIPOC communities.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="skills-wrap" aria-label="Skills">
+          <span class="skill">International Business Management</span>
+          <span class="skill">Culture Theory</span>
+          <span class="skill">Cross-Cultural Research</span>
+          <span class="skill">Group Work</span>
+          <span class="skill">Battery Passport Data Management</span>
+          <span class="skill">Digital Product Passports</span>
+          <span class="skill">AI Creative Writing Research</span>
+          <span class="skill">Podcasting</span>
+          <span class="skill">Hackathons</span>
+          <span class="skill">Nonprofit Analytics</span>
+          <span class="skill">Cinematic Storytelling</span>
+          <span class="skill">Music Direction</span>
+          <span class="skill">Systems Thinking</span>
+          <span class="skill">Event Coordination</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container quote-panel">
+        <blockquote>
+          A portfolio is not a list of projects. It is evidence of taste, discipline, memory, and direction.
+        </blockquote>
+        <p>
+          I am drawn to the tension between elegance and chaos: Germanic structure, Mexican memory, Spanish depth, American motion, Mediterranean warmth, blockchain transparency, AI futures, Wagnerian scale, Pink Floyd atmosphere, Joy Division shadow, and the cinematic question underneath all of it — what kind of world are we building, and who gets to belong in it?
+        </p>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container contact-panel">
+        <div>
+          <div class="section-kicker">Contact</div>
+          <h3>Let’s build something with cultural depth, sound, image, and technical clarity.</h3>
+          <p>
+            Open to international business research, culture theory, AI/data governance, digital product passport research, battery passport data management, startup ecosystem projects, podcasting, music, and cinematic narrative collaborations.
+          </p>
+        </div>
+        <div class="cta-row">
+          <a class="button primary" href="mailto:roromendez@icloud.com">Email Me</a>
+          <a class="button ghost" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> Rodrigo Mendez Carrillo</span>
+      <span>White · Red · Black · Purple · Nuremberg · Cinema · Music</span>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const cards = document.querySelectorAll('.project-card, .identity-card');
+    cards.forEach((card) => {
+      card.addEventListener('mousemove', (event) => {
+        const rect = card.getBoundingClientRect();
+        const x = event.clientX - rect.left;
+        const y = event.clientY - rect.top;
+        card.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(185,17,33,0.08), rgba(255,255,255,0.76) 38%)`;
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.background = 'rgba(255,255,255,0.74)';
+      });
+    });
+  </script>
+</body>
+</html>

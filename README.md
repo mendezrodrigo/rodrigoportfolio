@@ -18,8 +18,8 @@ This portfolio brings together my work across international business studies, st
 - Volunteering in Innovation Festivals & Hackathons
   
 - My Apocalypse Theater: Cinema Community
-- Shapeshifter Philharmonic: Music Composition
-- Rubikon Ventures: Distribution Network
+- Shapeshifter Philharmonic: New Music Composition
+
 
 ## Creative Influences
 

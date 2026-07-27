@@ -34,9 +34,9 @@ This portfolio brings together my work across international business studies, st
 
 ## Creative Influences
 
-Cinema, mythology, Mediterranean romanticism, Germanic theory, systems thinking, music, theology, philosophy, and cross-cultural storytelling.
+Classical Cinema, Mythology Stories, Mediterranean Romanticism, Germanic Philosophy, Soundtrack Music, and Cross-Cultural Storytelling.
 
-Influences include Marcus Aurelius, Miyamoto Musashi, Robert Greene, Gustave Doré, Joseph Campbell, Dante Alighieri, Joy Division, Pink Floyd, Richard Wagner, classical music, rock, metal, bossa nova, and cinematic narrative design.
+Influences: Marcus Aurelius, Miyamoto Musashi, Robert Greene, Gustave Doré, Joseph Campbell, Dante Alighieri, Joy Division, Pink Floyd, Richard Wagner, Metallica, Stan Getz & Joao Gilberto, and Stanley Kubrick, and Chrisopher Nolan.
 
 ## Structure
 

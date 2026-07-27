@@ -10,15 +10,26 @@ This portfolio brings together my work across international business studies, st
 
 ## Featured Areas
 
-- German-Indian FDI and Technology Spillover: Absorptive / Observative Capacity Research
-- Battery Passport Data Management: Digital Product Passport Research
+## Personal
+- "Apocalypse Theater": Non-linear Short-Film Experimental Studio & Community Brand
+- "Paradoxical": Substack Writer on Philosphy, Psychology, & Literature Reinterpretations
+
+## Creative
+- "Berlin Whisper": Emotional Architect of Digital Experienence for Bottega Challenge by The Modern Renaissance
+- "Y Films": Director of Cinematography and Co-Producer for two short films in Nuremeberg
+
+## Internships
+- "Digital Product Passport": Value Consulting with Siemens via Zollhof Tech Incubator
+- "Hello World": International Student Platform for Mentorship via McMillon Innovation Studio
   
-- Hello World International Student Platform
-- START Nuremberg Podcasting, Marketing, Operations, Culture 
-- Volunteering in Innovation Festivals & Hackathons
+## Research
+- "Inkli": Early AI Creative Writing and Metaphor Creation Research for National Science Foundation
+- FAU MIBS German-Indian FDI and Technology Spillover: Absorptive / Observative Capacity Research
+
+## Community
+- START Network Volunteer in Nuremberg & ST. Gallen: Podcasting, Marketing, Operations, Culture Lead
+- AI Hackathon Participant for Road to START Hack and EuroTech Federation x Hong Kong Talent Engage
   
-- My Apocalypse Theater: Cinema Community
-- Shapeshifter Philharmonic: New Music Composition
 
 
 ## Creative Influences

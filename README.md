@@ -1,4 +1,4 @@
-# Rodrigo Mendez Carrillo — Portfolio
+# Rodrigo Mendez Carrillo — Creative Portfolio
 
 A minimalist personal portfolio exploring international business management, culture theory, research, cinema, music, and systems thinking.
 
